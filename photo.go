@@ -13,6 +13,7 @@ import (
 
 // Photo 照片处理
 type Photo struct {
+	Size  int64       // 尺寸
 	Ca    time.Time   // 创建时间
 	Faces []face.Face // 人脸识别
 	Make  string      // 相机
@@ -42,9 +43,10 @@ func NewPhoto(file string, rec *face.Recognizer) (photo *Photo, err error) {
 	photo = &Photo{
 		Faces: faces,
 	}
-	// 创建时间
+	// 基本信息
 	if s, err := os.Stat(file); err == nil {
 		photo.Ca = s.ModTime()
+		photo.Size = s.Size()
 	}
 	// 扩展信息
 	f, err := os.Open(file)
