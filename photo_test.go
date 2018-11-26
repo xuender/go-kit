@@ -10,7 +10,7 @@ func ExampleNewPhoto() {
 	rec, _ := face.NewRecognizer("data")
 	defer rec.Close()
 
-	b, err := NewPhoto("bona2.jpg", rec)
+	b, err := NewPhoto("lareina.jpg", rec)
 	fmt.Println(err)
 	fmt.Printf("%d\n", len(b.Faces))
 
