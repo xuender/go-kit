@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/Kagami/go-face"
+	face "github.com/Kagami/go-face"
 	"github.com/h2non/filetype"
 	"github.com/rwcarlsen/goexif/exif"
 	"github.com/rwcarlsen/goexif/mknote"

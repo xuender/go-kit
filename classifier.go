@@ -1,6 +1,8 @@
 package kit
 
 import (
+	"fmt"
+
 	face "github.com/Kagami/go-face"
 	utils "github.com/xuender/go-utils"
 )
@@ -18,7 +20,9 @@ func (c *Classifier) SetName(id utils.ID, name string) {
 }
 
 // Classify 分类
-func (c *Classifier) Classify(faces []Face) {
+func (c *Classifier) Classify(faces []*Face) {
+	fmt.Println(len(faces))
+
 	// TODO 分类
 	// 大量照片数据分析
 	// 测试大量照片分类性能

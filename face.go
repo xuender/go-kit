@@ -8,6 +8,15 @@ import (
 // Face 脸
 type Face struct {
 	ID   utils.ID  // ID
-	FID  []byte    // 照片文件ID
+	PID  []byte    // 照片文件ID
 	Face face.Face // 人脸识别
+}
+
+// NewFace 新建脸
+func NewFace(f face.Face, pid []byte) *Face {
+	return &Face{
+		Face: f,
+		ID:   utils.NewID(FacePrefix),
+		PID:  pid,
+	}
 }
